@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+#Rem Waste: Skip Select page design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Project Overview
+This project is a redesign of the "skip select" page accessed through a postcode/address flow. The goal was to enhance the UI/UX while maintaining all original functionality, ensuring responsiveness across mobile and desktop.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+-Redesigned UI with a modern, clean look
+-Fully responsive layout for mobile and desktop
+-Dynamic skip options populated from external data source
+-Accessible components with semantic HTML and ARIA roles
+-Maintainable code using React + functional components + hooks
 
-## Expanding the ESLint configuration
+## Tech Stack
+-React
+-TypeScript 
+-Tailwind CSS
+-Axios o for data fetching
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## How to run
+``
+git clone https://github.com/yourusername/skip-redesign.git
+cd skip-redesign
+npm install
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+``
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Design Decisions
+-Reverse Engineering: Since no Figma or design system was provided, I inspected the original page using browser developer tools to understand its layout, spacing, font sizes, and behavior. This helped guide the visual redesign while keeping core functionality intact.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+-Responsiveness: Used CSS Flex/Grid in tailwind to ensure proper scaling on various screen sizes.
+ I also followed mobile-first design principles, ensuring the page looks great and functions smoothly across all screen sizes.
+
+-Accessibility: Used alt tags, semantic tags, and ensured keyboard navigability.
+
+-State Management:I used React Context API to manage and share state related to the selected skip option across multiple components such as the slider panel and the summary view.
+This approach ensures centralized and consistent data flow without excessive prop drilling.
+Context was kept simple and localized to just what's needed, maintaining performance and readability.
+
+Componentization: I split the UI into modular, reusable components for better maintainability and clarity.
+
+-API Data Handling: Data from external source is fetched once and cached locally for better performance
