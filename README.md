@@ -48,7 +48,7 @@ npm run dev
 This approach ensures centralized and consistent data flow without excessive prop drilling.
 Context was kept simple and localized to just what's needed, maintaining performance and readability.
 
-Componentization: I split the UI into modular, reusable components for better maintainability and clarity.
+-Componentization: I split the UI into modular, reusable components for better maintainability and clarity.
 
 -API Data Handling: Data from external source is fetched once and cached locally for better performance
 
