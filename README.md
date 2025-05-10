@@ -28,6 +28,8 @@ Create a .env in root directory and add
 VITE_SKIP_API_URL=https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft
 
 ```
+
+```
 git clone https://github.com/Isaacprogi/rem-waste.git
 cd rem-waste
 npm install
