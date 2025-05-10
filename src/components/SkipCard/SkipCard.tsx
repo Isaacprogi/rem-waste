@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSkipContext } from '../../hooks/useSkipContext';
+
 
 interface SkipCardProps {
+  id:number;
   imageUrl: string;
   title: string;
   sizeLabel: string;
@@ -10,6 +13,7 @@ interface SkipCardProps {
 }
 
 const SkipCard: React.FC<SkipCardProps> = ({
+  id,
   imageUrl,
   title,
   sizeLabel,
@@ -17,8 +21,15 @@ const SkipCard: React.FC<SkipCardProps> = ({
   hirePeriod,
   onSelect,
 }) => {
+    const {selectedSkip} = useSkipContext()
+    console.log(selectedSkip)
   return (
-    <div className="group relative rounded-lg border-2 p-4 md:p-6 transition-all border-[#2A2A2A] hover:border-[#0037C1]/50 bg-[#1C1C1C] text-white cursor-pointer">
+    <div
+     onClick={onSelect}
+      className={`group relative rounded-lg border-2 p-4 md:p-6 transition-all border-[#2A2A2A] hover:border-[#0037C1]/50 bg-[#1C1C1C] text-white cursor-pointer ${
+        selectedSkip?.id === id  ?  'border-[#0037C1]' : ''
+      }`} 
+    >
       <div className="relative">
         <img
           src={imageUrl}
@@ -54,8 +65,8 @@ const SkipCard: React.FC<SkipCardProps> = ({
           strokeLinejoin="round"
           className="lucide lucide-arrow-right w-4 h-4"
         >
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
         </svg>
       </button>
     </div>

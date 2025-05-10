@@ -1,4 +1,4 @@
-export type Skip {
+export interface Skip {
     id: number;
     size: number;
     hire_period_days: number;

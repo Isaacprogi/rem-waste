@@ -1,4 +1,4 @@
-#Rem Waste: Skip Select page design
+# Rem Waste: Skip Select page design
 
 
 ## Project Overview
@@ -14,8 +14,8 @@ This project is a redesign of the "skip select" page accessed through a postcode
 ## Tech Stack
 -React
 -TypeScript 
--Tailwind CSS
--Axios o for data fetching
+-Tailwind CSS for styling
+-Axios for data fetching
 
 
 ## How to run
@@ -27,18 +27,13 @@ npm run dev
 
 ``
 
-## Design Decisions
--Reverse Engineering: Since no Figma or design system was provided, I inspected the original page using browser developer tools to understand its layout, spacing, font sizes, and behavior. This helped guide the visual redesign while keeping core functionality intact.
-
+## Design Decisions and Approach
+***-Reverse Engineering: Since no Figma or design system was provided, I inspected the original page using browser developer tools to understand its layout, spacing, font sizes, and behavior. This helped guide the visual redesign while keeping core functionality intact.
 -Responsiveness: Used CSS Flex/Grid in tailwind to ensure proper scaling on various screen sizes.
  I also followed mobile-first design principles, ensuring the page looks great and functions smoothly across all screen sizes.
-
 -Accessibility: Used alt tags, semantic tags, and ensured keyboard navigability.
-
 -State Management:I used React Context API to manage and share state related to the selected skip option across multiple components such as the slider panel and the summary view.
 This approach ensures centralized and consistent data flow without excessive prop drilling.
 Context was kept simple and localized to just what's needed, maintaining performance and readability.
-
 Componentization: I split the UI into modular, reusable components for better maintainability and clarity.
-
 -API Data Handling: Data from external source is fetched once and cached locally for better performance

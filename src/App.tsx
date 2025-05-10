@@ -1,9 +1,11 @@
 import SelectSkip from './pages/SelectSkip/SelectSkip'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
- 
-
-  return <SelectSkip/>
+  return <div className='min-h-screen px-4 py-8'>
+    <Navbar />
+    <SelectSkip />
+  </div>
 
 }
 
