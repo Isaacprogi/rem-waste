@@ -11,6 +11,7 @@ const SelectSkip = () => {
     const [panelPosition, setPanelPosition] = useState(0)
 
     const API_URL = import.meta.env.VITE_SKIP_API_URL
+    console.log("API_URL", API_URL);
 
     useEffect(() => {
         const fetchSkips = async () => {
