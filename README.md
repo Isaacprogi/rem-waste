@@ -16,10 +16,10 @@ This project is a redesign of the "skip select" page.The goal was to enhance the
 
 ## Tech Stack
 
--React
--TypeScript 
--Tailwind CSS for styling
--Axios for data fetching
+- React
+- TypeScript 
+- Tailwind CSS for styling
+- Axios for data fetching
 
 ## How to run
 
