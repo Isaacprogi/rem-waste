@@ -10,7 +10,7 @@ const SelectSkip = () => {
     const { skips, setSkips, setSelectedSkip, loading, setLoading } = useSkipContext();
     const [panelPosition, setPanelPosition] = useState(0)
 
-    const API_URL ="https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft";
+    const API_URL = import.meta.env.VITE_SKIP_API_URL
 
     useEffect(() => {
         const fetchSkips = async () => {
